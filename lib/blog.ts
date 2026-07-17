@@ -1,8 +1,12 @@
 import fs from "fs";
 import path from "path";
-import { remark } from "remark";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
-import remarkHtml from "remark-html";
+import remarkMath from "remark-math";
+import remarkRehype from "remark-rehype";
+import rehypeKatex from "rehype-katex";
+import rehypeStringify from "rehype-stringify";
 import { BASE_PATH, withBasePath } from "@/lib/base-path";
 
 const BLOG_DIR = path.join(process.cwd(), "blogs");
@@ -96,9 +100,13 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const stat = fs.statSync(fullPath);
   const parsed = parsePost(raw, slug, stat.mtime.toISOString().slice(0, 10));
 
-  const processed = await remark()
+  const processed = await unified()
+    .use(remarkParse)
     .use(remarkGfm)
-    .use(remarkHtml)
+    .use(remarkMath)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeKatex)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(parsed.body || "_This post doesn't have any content yet._");
 
   // Rewrite root-relative content images (e.g. from ![alt](/blog-images/foo.png))
