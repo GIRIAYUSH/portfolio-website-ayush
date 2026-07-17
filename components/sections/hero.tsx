@@ -38,6 +38,23 @@ export function Hero() {
                 {PROFILE.tagline}
               </p>
             </Reveal>
+            <Reveal delay={0.22}>
+              <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-foreground/80">
+                {PROFILE.bio}
+              </p>
+            </Reveal>
+            <Reveal delay={0.24}>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {PROFILE.focusAreas.map((area) => (
+                  <span
+                    key={area}
+                    className="rounded-full border border-accent/25 bg-accent-soft px-3 py-1 text-xs font-medium text-accent"
+                  >
+                    {area}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
             <Reveal delay={0.25}>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
@@ -64,8 +81,9 @@ export function Hero() {
 
           <Reveal delay={0.1} className="shrink-0">
             <div className="relative">
-              <div className="absolute inset-0 -z-10 scale-110 rounded-[2rem] bg-accent/20 blur-2xl" />
-              <div className="relative h-40 w-40 overflow-hidden rounded-[2rem] border border-accent/30 shadow-xl sm:h-52 sm:w-52">
+              <div className="absolute inset-0 -z-10 scale-125 rounded-[2rem] bg-gradient-to-br from-accent/30 via-accent/10 to-transparent blur-3xl" />
+              <div className="absolute -inset-px -z-10 rounded-[2.1rem] bg-gradient-to-br from-accent/40 to-transparent opacity-60" />
+              <div className="relative h-40 w-40 overflow-hidden rounded-[2rem] border border-accent/30 shadow-xl ring-1 ring-border/50 transition-transform duration-500 hover:scale-[1.02] sm:h-52 sm:w-52">
                 <Image
                   src={withBasePath("/avatar.jpg")}
                   alt={PROFILE.name}

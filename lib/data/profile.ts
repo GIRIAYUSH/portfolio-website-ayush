@@ -1,10 +1,12 @@
 export const PROFILE = {
   name: "Ayush Giri",
   initials: "AG",
-  role: "Research Engineer — LLM Reliability & Interpretability",
+  role: "Research AI Engineer",
   headline: "Research Engineer and AI Research Enthusiast",
   company: "Nepal Clearing House Ltd. (NCHL)",
-  tagline: "Mechanistic Interpretability · Trustworthy AI · LLM Reliability & Interpretability",
+  tagline: "Mechanistic Interpretability · Trustworthy AI",
+  bio: "I'm a Research Engineer with a research bent, drawn to how large models actually work and how to make them work reliably. My interests sit at the intersection of trustworthy AI, LLM reliability and interpretability, evaluation frameworks that catch failures before deployment, and training dynamics like RL.",
+  focusAreas: ["Trustworthy AI", "LLM Reliability & Interpretability", "Evaluation Frameworks for Faithfulness", "Training Dynamics & RL"],
   location: "Kathmandu, Nepal",
   email: "iamgiriayush@gmail.com",
   emails: {
