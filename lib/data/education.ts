@@ -5,10 +5,11 @@ export const EDUCATION = {
   cgpa: "8.53 / 10",
   coursework: [
     "Machine Learning",
-    "Deep Learning",
+    "Natural Language Processing",
     "Artificial Intelligence",
-    "Data Structures & Algorithms",
-    "Cloud Computing",
+    "Linear Algebra",
+    "Probability and Statistics",
+    "Cloud Computing"
   ],
 };
 

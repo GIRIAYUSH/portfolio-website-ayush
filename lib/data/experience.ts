@@ -13,7 +13,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
   {
     id: "nchl",
     company: "Nepal Clearing House Ltd. (NCHL)",
-    role: "Research Engineer — LLM Reliability & Interpretability",
+    role: "Research Engineer: LLM Reliability & Interpretability",
     period: "Mar 2025 — Present",
     location: "Kathmandu, Nepal",
     current: true,
@@ -44,7 +44,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
   {
     id: "nus",
     company: "National University of Singapore (NUS)",
-    role: "Academic Intern — Deep Learning & Data Analytics",
+    role: "Academic Intern: Deep Learning & Data Analytics",
     period: "May 2023 — Jul 2023",
     location: "Singapore",
     bullets: [
@@ -61,7 +61,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     bullets: [
       "Published \"Harnessing ResUHybridNet with Federated Learning: A New Paradigm in Brain Tumour Segmentation\" for data-preserving, decentralized medical imaging environments.",
       "Developed MediQNet, a multi-modal transformer-based medical VQA system, as final-year thesis.",
-      "Laid foundational skills in research methodology, experiment design, and reproducible deep-learning engineering.",
+      "Laid foundational skills in research methodology, experiment design, and reproducible research practices.",
     ],
     stats: [
       { label: "Segmentation accuracy", value: "97.4%" },

@@ -32,6 +32,7 @@ const EDGES: [number, number][] = NODES.flatMap((_, i) =>
 
 export function EmbeddingParticles({ containerId }: { containerId: string }) {
   const svgRef = useRef<SVGSVGElement>(null);
+  const nodeRefs = useRef<(SVGCircleElement | null)[]>([]);
   const reducedMotion = useReducedMotion();
 
   useEffect(() => {
@@ -57,6 +58,37 @@ export function EmbeddingParticles({ containerId }: { containerId: string }) {
     return () => ctx.revert();
   }, [containerId, reducedMotion]);
 
+  useEffect(() => {
+    if (reducedMotion) return;
+    const target = document.getElementById(containerId);
+    if (!target) return;
+
+    const handleMove = (event: MouseEvent) => {
+      const bounds = target.getBoundingClientRect();
+      const px = ((event.clientX - bounds.left) / bounds.width) * 100;
+      const py = ((event.clientY - bounds.top) / bounds.height) * 100;
+
+      NODES.forEach((node, i) => {
+        const el = nodeRefs.current[i];
+        if (!el) return;
+        const dx = px - node.x;
+        const dy = py - node.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const pull = Math.max(0, 1 - dist / 28);
+        gsap.to(el, {
+          x: -dx * pull * 0.35,
+          y: -dy * pull * 0.35,
+          duration: 0.6,
+          ease: "power2.out",
+          overwrite: "auto",
+        });
+      });
+    };
+
+    target.addEventListener("mousemove", handleMove);
+    return () => target.removeEventListener("mousemove", handleMove);
+  }, [containerId, reducedMotion]);
+
   return (
     <svg
       ref={svgRef}
@@ -80,6 +112,9 @@ export function EmbeddingParticles({ containerId }: { containerId: string }) {
       {NODES.map((node, i) => (
         <circle
           key={i}
+          ref={(el) => {
+            nodeRefs.current[i] = el;
+          }}
           cx={node.x}
           cy={node.y}
           r={node.r * 0.18}

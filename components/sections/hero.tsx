@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card";
 import { Stat } from "@/components/ui/stat";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { EmbeddingParticles } from "@/components/motion/embedding-particles";
+import { DecodeText } from "@/components/motion/decode-text";
 
 export function Hero() {
   return (
@@ -29,8 +30,8 @@ export function Hero() {
               </p>
             </Reveal>
             <Reveal delay={0.15}>
-              <p className="mt-3 max-w-2xl text-base text-muted-foreground">
-                {PROFILE.role} — {PROFILE.company}
+              <p className="mt-3 max-w-2xl font-mono text-base text-muted-foreground">
+                <DecodeText text={PROFILE.role} delay={300} /> — {PROFILE.company}
               </p>
             </Reveal>
             <Reveal delay={0.2}>

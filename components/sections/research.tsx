@@ -23,7 +23,7 @@ export function Research() {
         <div className="mt-24">
           <Reveal>
             <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-              Core skills
+              <span className="text-muted-foreground">{">"}</span> Core skills
             </h3>
             <p className="mt-3 max-w-2xl text-base text-muted-foreground">
               Skills grouped by focus area — each one specializing in a different part of the

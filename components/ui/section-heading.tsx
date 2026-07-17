@@ -22,7 +22,9 @@ export function SectionHeading({
           align === "center" && "justify-center"
         )}
       >
-        <span>{index}</span>
+        <span className="rounded border border-accent/25 bg-accent-soft px-1.5 py-0.5">
+          {index === "—" ? index : `[${index}]`}
+        </span>
         <span className="h-px w-8 bg-border" />
       </div>
       <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
