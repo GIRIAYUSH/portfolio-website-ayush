@@ -34,11 +34,6 @@ export function Hero() {
                 <DecodeText text={PROFILE.role} delay={300} /> — {PROFILE.company}
               </p>
             </Reveal>
-            <Reveal delay={0.2}>
-              <p className="mt-3 max-w-2xl font-mono text-sm text-muted-foreground">
-                {PROFILE.tagline}
-              </p>
-            </Reveal>
             <Reveal delay={0.22}>
               <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-foreground/80">
                 {PROFILE.bio}

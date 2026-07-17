@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: `${PROFILE.name} — ${PROFILE.role}`,
-  description: PROFILE.tagline,
+  description: PROFILE.bio,
 };
 
 export default function RootLayout({
