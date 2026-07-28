@@ -20,7 +20,7 @@ export async function RecentPosts() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionHeading
             index="3.5"
-            title="Recent Writing"
+            title="Recent Research Projects"
             description="Project write-ups and research notes, as they happen."
           />
           <Link

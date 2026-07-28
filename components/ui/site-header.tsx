@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { label: "Home", href: "/#hero" },
   { label: "Education", href: "/#education" },
   { label: "Research", href: "/#research" },
-  { label: "Writing", href: "/#writing" },
+  { label: "Recent Research Projects", href: "/#writing" },
   { label: "Publications", href: "/#publications" },
   { label: "Projects and Research Blog", href: "/blog", external: true },
   { label: "Contact", href: "/#contact" },
